@@ -1,0 +1,20 @@
+services:
+  flask:
+    build:
+      context: .
+    environment:
+      - PORT=5000
+    ports:
+      - "5000:5000"
+
+  laravel:
+    build:
+      context: ./laravel-app
+    environment:
+      - PORT=8000
+      - APP_URL=http://localhost:8000
+      - FLASK_PREDICT_URL=http://flask:5000/predict
+    ports:
+      - "8000:8000"
+    depends_on:
+      - flask

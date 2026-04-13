@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.Python
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local datasets / training assets
+DATASET/
+ai-model/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Laravel (nested project artifacts)
+laravel-app/.env
+laravel-app/.env.*
+laravel-app/vendor/
+laravel-app/node_modules/
+laravel-app/public/build/
+laravel-app/public/hot
+laravel-app/storage/logs/
+laravel-app/storage/framework/cache/
+laravel-app/storage/framework/sessions/
+laravel-app/storage/framework/views/
+
+# VS Code
+.vscode/

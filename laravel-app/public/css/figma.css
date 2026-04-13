@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+    --fg-bg: #f1f5f9;
+    --fg-card-bg: #ffffff;
+    --fg-card-border: rgba(15, 23, 42, 0.06);
+    --fg-card-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+    --fg-card-shadow-sm: 0 2px 12px rgba(15, 23, 42, 0.06);
+
+    --fg-navbar-bg: rgba(15, 23, 42, 1);
+    --fg-navbar-bg-scrolled: rgba(15, 23, 42, 0.96);
+    --fg-navbar-border: rgba(255, 255, 255, 0.06);
+    --fg-navbar-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+
+    --fg-green: #22c55e;
+    --fg-blue: #3b82f6;
+    --fg-indigo: #6366f1;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: var(--fg-bg);
+    color: #0f172a;
+    font-family:
+        "Poppins",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+/* Navbar (Figma-like) */
+.fg-navbar {
+    background: var(--fg-navbar-bg);
+    border-bottom: 1px solid var(--fg-navbar-border);
+    backdrop-filter: blur(16px);
+}
+
+.fg-navbar[data-scrolled="1"] {
+    background: var(--fg-navbar-bg-scrolled);
+    box-shadow: var(--fg-navbar-shadow);
+}
+
+/* Simple card helpers */
+.fg-card {
+    background: var(--fg-card-bg);
+    border: 1px solid var(--fg-card-border);
+    box-shadow: var(--fg-card-shadow);
+}
+
+.fg-card-sm {
+    background: var(--fg-card-bg);
+    border: 1px solid rgba(15, 23, 42, 0.05);
+    box-shadow: var(--fg-card-shadow-sm);
+}
+
+/* Active nav pill */
+.fg-nav-pill {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Icon color helpers (avoid Blade expressions inside style attributes) */
+.fg-icon-active {
+    color: var(--fg-green);
+}
+
+.fg-icon-inactive {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.fg-icon-mobile-inactive {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.fg-mobile-active-bg {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Accent presets to avoid inline Blade-in-style expressions */
+.accent-organic {
+    --accent: #22c55e;
+    --accent-bg: rgba(34, 197, 94, 0.1);
+    --accent-border: rgba(34, 197, 94, 0.25);
+    --accent-20: rgba(34, 197, 94, 0.2);
+    --accent-10: rgba(34, 197, 94, 0.1);
+    --accent-08: rgba(34, 197, 94, 0.08);
+}
+
+.accent-recyclable {
+    --accent: #3b82f6;
+    --accent-bg: rgba(59, 130, 246, 0.1);
+    --accent-border: rgba(59, 130, 246, 0.25);
+    --accent-20: rgba(59, 130, 246, 0.2);
+    --accent-10: rgba(59, 130, 246, 0.1);
+    --accent-08: rgba(59, 130, 246, 0.08);
+}
+
+.accent-uncertain {
+    --accent: #f59e0b;
+    --accent-bg: rgba(245, 158, 11, 0.1);
+    --accent-border: rgba(245, 158, 11, 0.25);
+    --accent-20: rgba(245, 158, 11, 0.2);
+    --accent-10: rgba(245, 158, 11, 0.1);
+    --accent-08: rgba(245, 158, 11, 0.08);
+}
+
+/* Result step presets */
+.fg-step-1 {
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.fg-step-2 {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.fg-step-3 {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.fg-step-4 {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+/* Team palette presets (avoid Blade expressions inside style attributes) */
+.team-p-0 {
+    --team-role-color: #6366f1;
+    --team-role-bg: rgba(99, 102, 241, 0.1);
+    --team-role-border: rgba(99, 102, 241, 0.188);
+    --team-role-shadow: rgba(99, 102, 241, 0.25);
+    --team-role-fade: rgba(99, 102, 241, 0.125);
+    --team-avatar-gradient: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
+
+.team-p-1 {
+    --team-role-color: #3b82f6;
+    --team-role-bg: rgba(59, 130, 246, 0.1);
+    --team-role-border: rgba(59, 130, 246, 0.188);
+    --team-role-shadow: rgba(59, 130, 246, 0.25);
+    --team-role-fade: rgba(59, 130, 246, 0.125);
+    --team-avatar-gradient: linear-gradient(135deg, #3b82f6, #06b6d4);
+}
+
+.team-p-2 {
+    --team-role-color: #f59e0b;
+    --team-role-bg: rgba(245, 158, 11, 0.1);
+    --team-role-border: rgba(245, 158, 11, 0.188);
+    --team-role-shadow: rgba(245, 158, 11, 0.25);
+    --team-role-fade: rgba(245, 158, 11, 0.125);
+    --team-avatar-gradient: linear-gradient(135deg, #f59e0b, #ef4444);
+}
+
+.team-p-3 {
+    --team-role-color: #ec4899;
+    --team-role-bg: rgba(236, 72, 153, 0.1);
+    --team-role-border: rgba(236, 72, 153, 0.188);
+    --team-role-shadow: rgba(236, 72, 153, 0.25);
+    --team-role-fade: rgba(236, 72, 153, 0.125);
+    --team-avatar-gradient: linear-gradient(135deg, #ec4899, #f97316);
+}
+
+.team-p-4 {
+    --team-role-color: #22c55e;
+    --team-role-bg: rgba(34, 197, 94, 0.1);
+    --team-role-border: rgba(34, 197, 94, 0.188);
+    --team-role-shadow: rgba(34, 197, 94, 0.25);
+    --team-role-fade: rgba(34, 197, 94, 0.125);
+    --team-avatar-gradient: linear-gradient(135deg, #22c55e, #0ea5e9);
+}
+
+.team-p-5 {
+    --team-role-color: #8b5cf6;
+    --team-role-bg: rgba(139, 92, 246, 0.1);
+    --team-role-border: rgba(139, 92, 246, 0.188);
+    --team-role-shadow: rgba(139, 92, 246, 0.25);
+    --team-role-fade: rgba(139, 92, 246, 0.125);
+    --team-avatar-gradient: linear-gradient(135deg, #8b5cf6, #6366f1);
+}
+
+.team-avatar-stack {
+    background: var(--team-avatar-gradient);
+    border: 2px solid rgba(15, 23, 42, 0.8);
+    font-weight: 700;
+    font-size: 0.65rem;
+}
+
+.team-role-header-bg {
+    background: linear-gradient(
+        135deg,
+        var(--team-role-fade),
+        rgba(15, 23, 42, 0.02)
+    );
+}
+
+.team-role-blob {
+    background: var(--team-avatar-gradient);
+}
+
+.team-avatar-card {
+    background: var(--team-avatar-gradient);
+    box-shadow: 0 6px 20px var(--team-role-shadow);
+    border: 3px solid #ffffff;
+    font-weight: 800;
+    font-size: 1.15rem;
+}
+
+.team-role-badge {
+    background: var(--team-role-bg);
+    color: var(--team-role-color);
+    border: 1px solid var(--team-role-border);
+    font-weight: 700;
+}

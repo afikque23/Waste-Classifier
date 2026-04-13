@@ -1,0 +1,22 @@
+# Python / TF image
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+
+# Not needed to run inference
+DATASET/
+ai-model/
+laravel-app/
+*.ipynb
+
+# Git
+.git/
+.gitignore
+
+# OS
+.DS_Store
+Thumbs.db
