@@ -2,25 +2,30 @@ services:
   # 1) AI inference API (Flask + TensorFlow)
   - type: web
     name: waste-flask-api
-    env: docker
+    runtime: docker
     plan: free
     dockerfilePath: ./Dockerfile
     dockerContext: .
     autoDeploy: true
+    healthCheckPath: /health
 
   # 2) Web app (Laravel)
   - type: web
     name: waste-laravel-web
-    env: docker
+    runtime: docker
     plan: free
     dockerfilePath: ./laravel-app/Dockerfile
     dockerContext: ./laravel-app
     autoDeploy: true
+    healthCheckPath: /
     envVars:
       - key: APP_ENV
         value: production
       - key: APP_DEBUG
         value: "false"
-      # Set this after the Flask service is deployed and you have its URL.
+      - key: APP_KEY
+        generateValue: true
+      # Provide the full URL after the Flask service is deployed.
+      # Example: https://waste-flask-api.onrender.com/predict
       - key: FLASK_PREDICT_URL
-        value: https://waste-flask-api.onrender.com/predict
+        sync: false

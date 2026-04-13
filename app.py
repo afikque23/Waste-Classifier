@@ -113,6 +113,10 @@ def create_app() -> Flask:
     # Invers mapping: index -> folder_name
     index_to_folder = {int(v): k for k, v in class_indices.items()}
 
+    @app.get("/health")
+    def healthcheck():
+        return jsonify({"status": "ok"})
+
     @app.post("/predict")
     def predict_endpoint():
         if "image" not in request.files:
