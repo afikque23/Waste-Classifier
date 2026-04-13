@@ -84,8 +84,4 @@
             </div>
         @endforeach
     </div>
-
-    <div class="mt-6 text-xs text-slate-400">
-        Edit data anggota di <span class="text-slate-600" style="font-weight: 700;">config/team.php</span>.
-    </div>
 </x-layouts.app>
